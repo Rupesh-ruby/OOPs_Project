@@ -4,6 +4,7 @@ from selenium.webdriver.support.select import Select
 
 
 class Justintime:
+
     def __init__(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
@@ -42,13 +43,18 @@ class AddWatch(Justintime):
         self.driver.find_element(By.XPATH, "(//input[@class='input-text'])[12]").send_keys("9944504518")
         self.driver.find_element(By.XPATH, "//button[@class='button action continue primary']").click()
 
+       
+#exception handling
     def ele(self):
         try:
             self.driver.find_element(By.XPATH,"//div[@class='custom-icon custom-customer']").click()
 
         except:
             print("Invalid xpath")
+#menu
 obj = AddWatch()
+
+
 while True:
     print("Enter 1 for login")
     print("Enter 2 for Add Items to bag if you are login")
